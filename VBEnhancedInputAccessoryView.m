@@ -302,8 +302,7 @@
 		if (![self isThereNextTextInput]) {
 			if (self.delegate
 				&& [self.delegate conformsToProtocol:@protocol(UITextFieldDelegate)]
-				&& [self.delegate respondsToSelector:@selector(textFieldShouldReturn:)]
-				&& [object isKindOfClass:[UITextView class]]) {
+				&& [self.delegate respondsToSelector:@selector(textFieldShouldReturn:)]) {
 				[(UIView <UITextFieldDelegate> *)self.delegate textFieldShouldReturn:(UITextField *)object];
 			}
 		}
